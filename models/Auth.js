@@ -16,8 +16,7 @@ const UserSchema = new mongoose.Schema({
     },
     mobile: {  // ✅ Added mobile number field
         type: String,
-        required: true,
-        unique: true // Ensures no duplicate mobile numbers
+       
     },
     role: {
         type: String,

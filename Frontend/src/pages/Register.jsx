@@ -23,6 +23,8 @@ export default function Register() {
       formData.append('email', user.email);
       formData.append('password', user.password);
       formData.append('profile', user.profile);
+      formData.append('mobile', user.mobile);
+
 
       const res = await axios.post(`${Baseurl}/api/Auth/register`, formData, {
         headers: {
@@ -39,6 +41,7 @@ export default function Register() {
           email: '',
           password: '',
           profile: null,
+          mobile:''
         });
         navigate('/login');
       }
@@ -94,7 +97,7 @@ export default function Register() {
             {/* 🔹 Mobile Number Input Field Added */}
             <div>
               <label htmlFor="mobile" className="block mb-3 text-lg font-medium text-gray-900 dark:text-white">Mobile Number</label>
-              <input type="tel" name="mobile" value={user.mobile} onChange={handleInput} placeholder="Enter your mobile number" required className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5" />
+              <input type="tel" name="mobile" value={user.mobile} onChange={handleInput} placeholder="Enter your mobile number" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5" />
             </div>
             <div>
               <label htmlFor="password" className="block mb-3 text-lg font-medium text-gray-900 dark:text-white">Password</label>
